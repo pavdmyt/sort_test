@@ -29,3 +29,11 @@ class TestSort(object):
     def test_quick_sort(self):
         quick_sort(self.lst)
         assert_equal(self.lst, self.sorted_lst)
+
+    def test_heap_sort(self):
+        heap_sort(self.lst)
+        assert_equal(self.lst, self.sorted_lst)
+
+    def test_radix_sort(self):
+        radix_sort(self.lst)
+        assert_equal(self.lst, self.sorted_lst)

@@ -1,3 +1,6 @@
+import heapq
+
+
 def bubble_sort(items):
     """Implementation of bubble sort.
 
@@ -42,7 +45,7 @@ def merge_sort(items):
     """
     if len(items) > 1:
 
-        mid = len(items) / 2        # Determine the midpoint and split
+        mid = len(items) // 2        # Determine the midpoint and split
         left = items[0:mid]
         right = items[mid:]
 
@@ -71,7 +74,7 @@ def quick_sort(items):
     Time complexity: O(n*log(n))
     """
     if len(items) > 1:
-        pivot_index = len(items) / 2
+        pivot_index = len(items) // 2
         smaller_items = []
         larger_items = []
 
@@ -85,3 +88,26 @@ def quick_sort(items):
         quick_sort(smaller_items)
         quick_sort(larger_items)
         items[:] = smaller_items + [items[pivot_index]] + larger_items
+
+
+def heap_sort(items):
+    """Implementation of heap sort.
+
+    Time complexity: O(n*log(n))
+    """
+    heapq.heapify(items)
+    items[:] = [heapq.heappop(items) for _ in range(len(items))]
+
+
+def radix_sort(items, base=10):
+    """Implementation of radix sort.
+
+    Time complexity: O(kn)
+    k - length of the longest number
+    """
+    maxval = max(items)
+    for x in range(len(str(maxval))):
+        bins = [[] for _ in range(base)]
+        for y in items:
+            bins[(y / 10**x) % base].append(y)
+        items[:] = [item for section in bins for item in section]
