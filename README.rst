@@ -16,6 +16,7 @@ Example and results
 
 ::
 
+	# Python 2.7.6 results
 	$ python sortalgs_timeit.py
 	bubble_sort
 	14.6841878891
@@ -37,6 +38,29 @@ Example and results
 
 	radix_sort
 	0.253129005432
+
+	# Python 3.4.0 results
+	$ python3 sortalgs_timeit.py 
+	bubble_sort
+	18.041432760001044
+
+	insertion_sort
+	15.274030503001995
+
+	selection_sort
+	8.200087869990966
+
+	merge_sort
+	0.9270278659969335
+
+	quick_sort
+	0.6184024200047133
+
+	heap_sort
+	0.06310781999491155
+
+	radix_sort
+	0.5277346099901479
 
 
 .. _response: http://stackoverflow.com/questions/8220801/how-to-use-timeit-module/8220943#8220943

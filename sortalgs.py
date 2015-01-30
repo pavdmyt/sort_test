@@ -109,5 +109,5 @@ def radix_sort(items, base=10):
     for x in range(len(str(maxval))):
         bins = [[] for _ in range(base)]
         for y in items:
-            bins[(y / 10**x) % base].append(y)
+            bins[(y // 10**x) % base].append(y)
         items[:] = [item for section in bins for item in section]
